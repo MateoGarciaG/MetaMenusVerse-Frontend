@@ -2,11 +2,12 @@
   "name": "metamenusverse-frontend",
   "version": "1.0.0",
   "description": "Project DWEC Fp Dual related to Frontend",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "prod": "npm run build && vite preview",
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint ./src --ext .js --fix",
     "format": "prettier . --write"
@@ -48,5 +49,8 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "dependencies": {
+    "vanilla-prop-types": "^1.8.6"
   }
 }
