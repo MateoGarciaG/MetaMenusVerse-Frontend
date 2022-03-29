@@ -1,0 +1,10 @@
+
+@import "./../../styles/constants.scss";
+
+.card {
+  background-color: yellow;
+
+  &__title {
+    background-color: $secondary;
+  }
+}

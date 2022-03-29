@@ -1,0 +1,126 @@
+
+// https://coolors.co/palette/432371-714674-9f6976-cc8b79-faae7b
+$primary: #2b0245;
+$contrast: #E2BBB1;
+$secondary: #feb93f;
+$tertiary: #432371;
+$complement: #4A4C5C;
+$gris-claro: #f9fafb;
+$shadow: #6a6a6a;
+$white: #fff;
+$black: #000;
+
+// Reverse settings
+/* Default resets */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body,
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+@font-face {
+  font-family: "Poppins Light";
+  font-display: swap;
+  src: url("./../assets/fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: "Poppins Medium";
+  font-display: swap;
+  src: url("./../assets/fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  font-display: swap;
+  src: url("./../assets/fonts/Poppins-Bold.ttf");
+}
+
+//Font Family:
+$font-family-title: "Poppins Bold", "sans-serif";
+$font-family-subtitle: "Poppins Medium", "sans-serif";
+$font-family-text: "Poppins Light", "sans-serif";
+
+/*
+$breakpoint argument choices:
+*/
+
+$extra-small: 370px;
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+$xx-large-screen: 1400px;
+
+// (min-device-width: 1258px) and (max-device-width: 1815px)
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == extra-small {
+    @media only screen and (max-width: $extra-small) {
+      @content;
+    }
+  }
+  @if $breakpoint == small-screen {
+    @media only screen and (max-width: $small-screen) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == medium-screen {
+    @media only screen and (max-width: $medium-screen) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large-screen {
+    @media only screen and (max-width: $large-screen) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == extra-large-screen {
+    @media only screen and (max-width: $extra-large-screen) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xx-large-screen {
+    @media only screen and (min-width: $xx-large-screen) {
+      @content;
+    }
+  }
+}
+
+
+@mixin button-link {
+  a {
+    padding: 1rem 2rem;
+    background: $primary;
+    color: $white;
+    border-radius: 40px;
+    text-decoration: none;
+
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      background: $secondary;
+      border: 3px solid $primary;
+      color: $primary;
+
+    }
+
+  }
+}
