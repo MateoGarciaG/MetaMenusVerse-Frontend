@@ -1,0 +1,19 @@
+@import "./../../styles/constants.scss";
+
+/** BACKGROUND GIF */
+main {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $primary;
+
+  img {
+    object-fit: cover;
+    width: 600px !important;
+    height: 400px !important;
+  }
+
+}
+

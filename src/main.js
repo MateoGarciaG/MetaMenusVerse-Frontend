@@ -1,10 +1,9 @@
 import "./style.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Banner } from "./components/banner/banner";
 import { Card } from "./components/card/card";
 import { Footer } from "./components/footer/footer";
-
 import { Header } from "./components/header/header";
-
 import { AddForm } from "./components/addForm/addForm";
 
 
@@ -12,6 +11,7 @@ let cards = [Card('Pedro', 27.3), Card('MArio', 12.3)];
 
 document.querySelector("#app").innerHTML += `
   ${Header()}
+  ${Banner()}
   <h1>Hello Vite!</h1>
   ${AddForm()}
   <div class="app__box" >
