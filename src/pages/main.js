@@ -1,6 +1,8 @@
 import "./style.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from "./../components/card/card";
+import { Footer } from "./../components/footer/footer";
+
 
 let cards = [Card('Pedro', 27.3), Card('MArio', 12.3)];
 
@@ -16,5 +18,5 @@ document.querySelector("#app").innerHTML += `
       ${cards.map(card => card)}
     </di>
   </di>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
+  ${Footer()}
 `;
