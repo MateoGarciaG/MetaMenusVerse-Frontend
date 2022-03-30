@@ -11,4 +11,8 @@ Su función principal es recibir información y transformarla o convertirla para
 ### DOM Shadow
 https://developer.mozilla.org/es/docs/Web/Web_Components/Using_shadow_DOM
 
+### Template utilizados
+https://technext.github.io/seomaster/contact.html
+https://themewagon.com/theme-framework/bootstrap-5/
 
+### DocumentFragment
