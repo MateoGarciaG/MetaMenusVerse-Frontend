@@ -10,7 +10,8 @@
     "prod": "npm run build && vite preview",
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint ./src --ext .js --fix",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "watch": "npm run build --watch --mode developmente"
   },
   "repository": {
     "type": "git",

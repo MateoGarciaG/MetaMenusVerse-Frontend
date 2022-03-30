@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 
-const root = resolve(__dirname, "src/pages");
+const root = resolve(__dirname, "src");
 const outDir = resolve(__dirname, "dist");
 
 // vite.config.js
@@ -25,6 +25,8 @@ export default defineConfig({
     outDir,
     // It's okay if it's empty
     emptyOutDir: true,
+    // https://www.youtube.com/watch?v=L23bAMdgOZA
+    //sourcemap: true,
     // Pages
     rollupOptions: {
       input: {
@@ -32,6 +34,6 @@ export default defineConfig({
         // Add others
       }
     }
-
   },
+
 });
