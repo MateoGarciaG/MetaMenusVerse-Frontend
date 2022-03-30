@@ -34,25 +34,39 @@ body {
 @font-face {
   font-family: "Poppins Light";
   font-display: swap;
-  src: url("./../assets/fonts/Poppins-Light.ttf");
+  src: url("./../public/fonts/Poppins-Light.ttf");
 }
 
 @font-face {
   font-family: "Poppins Medium";
   font-display: swap;
-  src: url("./../assets/fonts/Poppins-Medium.ttf");
+  src: url("./../public/fonts/Poppins-Medium.ttf");
 }
 
 @font-face {
   font-family: "Poppins Bold";
   font-display: swap;
-  src: url("./../assets/fonts/Poppins-Bold.ttf");
+  src: url("./../public/fonts/Poppins-Bold.ttf");
 }
 
 //Font Family:
 $font-family-title: "Poppins Bold", "sans-serif";
 $font-family-subtitle: "Poppins Medium", "sans-serif";
 $font-family-text: "Poppins Light", "sans-serif";
+
+h1, h2 {
+  font-family: $font-family-title;
+}
+
+h3, h4, h5, h6 {
+  font-family: $font-family-subtitle;
+}
+
+p, span, a, button, input, table, textarea, select {
+  font-family: $font-family-text;
+}
+
+
 
 /*
 $breakpoint argument choices:
