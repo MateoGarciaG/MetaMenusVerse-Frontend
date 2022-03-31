@@ -1,4 +1,4 @@
-// import template from "./card.html?raw";
+import jsonCard from "./card-json.html?raw";
 import styles from "./card.module.scss";
 // import "./card.module.scss";
 
@@ -21,6 +21,7 @@ export const Card = (nombre = "", precio = 0.0) => {
     </div>
   </div>
   `;
+  cardContainer.innerHTML += jsonCard;
   return cardContainer.innerHTML;
 
 };
