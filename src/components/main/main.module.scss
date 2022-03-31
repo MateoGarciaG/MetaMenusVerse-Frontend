@@ -8,16 +8,14 @@ main {
   align-items: center;
   flex-wrap: wrap;
   color: $primary;
-  background-image: url("./../../public/assets/images/banner/background_banner.jpg");
+  background-image: url("assets/images/main/background_banner.jpg");
   background-repeat: no-repeat;
-        background-position: left center;
-        background-size: cover;
+  background-position: left center;
+  background-size: cover;
 
   img {
     object-fit: cover;
     width: 600px !important;
     height: 400px !important;
   }
-
 }
-

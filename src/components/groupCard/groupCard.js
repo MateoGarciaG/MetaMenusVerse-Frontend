@@ -7,7 +7,7 @@ export const GroupCard = () => {
   const groupCard = document.createDocumentFragment();
   groupCard.innerHTML = `
   <!-- Service Start -->
-  <div class="container-xxl py-5">
+  <div class="container-xxl py-5 groupCards">
     <div class="container px-lg-8">
       <div
         class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
