@@ -1,10 +1,10 @@
 import "./style.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Main } from "./components/main/main";
-import { Card } from "./components/card/card";
-import { Footer } from "./components/footer/footer";
-import { Header } from "./components/header/header";
-import { AddForm } from "./components/addForm/addForm";
+import { Main } from "../components/main/main";
+import { Card } from "../components/card/card";
+import { Footer } from "../components/footer/footer";
+import { Header } from "../components/header/header";
+import { AddForm } from "../components/addForm/addForm";
 
 
 let cards = [Card('Pedro', 27.3), Card('MArio', 12.3)];

@@ -16,3 +16,8 @@ https://technext.github.io/seomaster/contact.html
 https://themewagon.com/theme-framework/bootstrap-5/
 
 ### DocumentFragment
+https://www.javascripttutorial.net/javascript-dom/javascript-documentfragment/
+
+### Vite HTML Template to be ROUTER
+// https://github.com/IndexXuan/vite-plugin-html-template
+https://github.com/IndexXuan/vite-plugin-mpa

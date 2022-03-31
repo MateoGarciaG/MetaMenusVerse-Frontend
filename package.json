@@ -36,7 +36,9 @@
     "prettier": "^2.6.1",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
-    "vite": "^2.8.0"
+    "vite": "^2.8.0",
+    "vite-plugin-html-template": "^1.1.2",
+    "vite-plugin-mpa": "^1.1.1"
   },
   "eslintConfig": {
     "root": true,
