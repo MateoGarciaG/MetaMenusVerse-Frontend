@@ -1,10 +1,77 @@
 
 @import "./../../styles/constants.scss";
 
-.card {
-  background-color: yellow;
 
-  &__title {
-    background-color: $secondary;
-  }
+
+/*** Service ***/
+.service-item {
+  position: relative;
+  height: 350px;
+  padding: 30px 25px;
+  background: $primary;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+  transition: .5s;
 }
+
+.service-item:hover {
+  background: $secondary;
+}
+
+.service-item .service-icon {
+  margin: 0 auto 20px auto;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  background: url(../img/icon-shape-primary.png) center center no-repeat;
+  transition: .5s;
+}
+
+.service-item:hover .service-icon {
+  color: $white;
+  background: url(../img/icon-shape-white.png);
+}
+
+.service-item h5,
+.service-item p {
+  transition: .5s;
+  color: $white;
+}
+
+.service-item:hover h5,
+.service-item:hover p {
+  color: $white;
+}
+
+.service-item a.btn {
+  position: relative;
+  display: flex;
+  color: $primary;
+  transition: .5s;
+  z-index: 1;
+}
+
+.service-item:hover a.btn {
+  color: $primary;
+}
+
+.service-item a.btn::before {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 35px;
+  top: 0;
+  left: 0;
+  border-radius: 35px;
+  background: #DDDDDD;
+  transition: .5s;
+  z-index: -1;
+}
+
+.service-item:hover a.btn::before {
+  width: 100%;
+  background: $secondary;
+}
+
