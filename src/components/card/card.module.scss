@@ -1,16 +1,91 @@
-
 @import "./../../styles/constants.scss";
 
+/* * Service item container  */
+.service-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 2rem;
 
+  width: 100%;
+  height: 770px;
+
+  position: relative;
+  transform-style: preserve-3d;
+
+  &:hover .service-item {
+    transform: perspective(500px) rotateY(180deg);
+  }
+
+  &:hover .json-card {
+    transform: perspective(500px) rotateY(360deg);
+  }
+}
+
+/** JSON CARD */
+.json-card {
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 770px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 2rem 0.25rem rgb(0 0 0 / 15%);
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.6s ease-in-out;
+  backface-visibility: hidden;
+  transform: perspective(500px) rotateY(180deg);
+  > pre {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    font-size: 1rem;
+    background-color: $code-color;
+    color: $white;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #ddd;
+    border-left: 8px solid $secondary;
+    page-break-inside: avoid;
+    line-height: 1.6;
+    word-wrap: break-word;
+    text-align: left;
+    span {
+      font-family: "Consolas";
+    }
+  }
+}
 
 /*** Service ***/
 .service-item {
-  position: relative;
-  height: 350px;
+  height: 770px;
+  width: 90%;
   padding: 30px 25px;
   background: $primary;
-  box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-  transition: .5s;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+  position: absolute !important;
+  backface-visibility: hidden !important;
+  transition: 0.6s ease-in-out !important;
+  transform: perspective(500px) rotateY(0deg);
+
+  p {
+    span {
+      color: $secondary;
+    }
+  }
+  ul {
+    li {
+      color: $white;
+    }
+  }
 }
 
 .service-item:hover {
@@ -26,17 +101,18 @@
   justify-content: center;
   color: $white;
   background: url(../img/icon-shape-primary.png) center center no-repeat;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.service-item:hover .service-icon {
-  color: $white;
-  background: url(../img/icon-shape-white.png);
+.service-icon {
+  > img {
+    width: 100px;
+  }
 }
 
 .service-item h5,
 .service-item p {
-  transition: .5s;
+  transition: 0.5s;
   color: $white;
 }
 
@@ -49,7 +125,7 @@
   position: relative;
   display: flex;
   color: $primary;
-  transition: .5s;
+  transition: 0.5s;
   z-index: 1;
 }
 
@@ -65,8 +141,8 @@
   top: 0;
   left: 0;
   border-radius: 35px;
-  background: #DDDDDD;
-  transition: .5s;
+  background: #dddddd;
+  transition: 0.5s;
   z-index: -1;
 }
 
@@ -74,4 +150,3 @@
   width: 100%;
   background: $secondary;
 }
-

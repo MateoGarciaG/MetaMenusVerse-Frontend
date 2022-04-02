@@ -8,7 +8,7 @@ export const Pagination = (
   cardsContainer,
   paginationContainer,
   cards = [],
-  numberPerPage = 3,
+  numberPerPage = 6,
   pageNumber = 1
 ) => {
   const generatePagination = () => {
@@ -70,7 +70,6 @@ export const Pagination = (
           html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`,
           cardsContainer
         );
-        console.log("Click al boton pag");
       });
   });
 };
