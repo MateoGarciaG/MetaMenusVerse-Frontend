@@ -10,11 +10,7 @@ export const AddForm = () => {
   const addFormContainer = document.querySelector("#addFormContainer");
   render(html`${unsafeHTML(addFormHtml)}`, addFormContainer)
 
-  addMenu();
-
-  // return html`
-  // ${unsafeHTML(addFormHtml)}
-  // `;
+  // addMenu();
 
 };
 

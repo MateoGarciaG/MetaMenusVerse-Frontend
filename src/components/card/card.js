@@ -6,7 +6,7 @@ import styles from "./card.module.scss";
 export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, category, state}) => {
   const cardContainer = document.createDocumentFragment();
   cardContainer.innerHTML = `
-  <div class="col-lg-4 col-md-9 wow zoomIn " data-wow-delay="0.1s">
+  <div class="col-lg-4 col-md-9 my-5 " data-wow-delay="0.1s">
     <div class="${styles["service-item-container"]}">
       <div class="${styles["service-item"]} d-flex flex-column justify-content-center text-center rounded">
         <div class="${styles["service-icon"]} flex-shrink-0">
@@ -44,7 +44,7 @@ export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, ca
           Toxicity: <span>${state.toxicity}</span>
           Energy: <span>${state.energy}</span>
         </p>
-        <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Get Data</a>
+        
       </div>
       <div class="${styles["json-card"]}">
         <pre>

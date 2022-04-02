@@ -1,5 +1,5 @@
 <!-- Contact Start -->
-<form id="addForm">
+<form id="agregarFormulario">
   <div class="container-xxl py-5">
     <div class="container px-lg-5">
       <div class="row justify-content-center">
@@ -8,7 +8,7 @@
             class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
             data-wow-delay="0.1s"
           >
-            <h2 class="mt-2 text-primary">Contact For Any Query</h2>
+            <h2 class="mt-2 text-primary">Agregar Menú</h2>
           </div>
           <div class="wow fadeInUp" data-wow-delay="0.3s">
             <form>
@@ -18,25 +18,100 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="name"
-                      placeholder="Your Name"
+                      id="title"
+                      name="title"
+                      placeholder="Title's Menu"
                     />
-                    <label for="name">Your Name</label>
+                    <label for="title">Title's Menu</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input
-                      type="email"
+                      type="text"
                       class="form-control"
-                      id="email"
-                      placeholder="Your Email"
+                      id="descriptionMenu"
+                      name="descriptionMenu"
+                      placeholder="Description's Menu"
                     />
-                    <label for="email">Your Email</label>
+                    <label for="descriptionMenu">Description's Menu</label>
                   </div>
                 </div>
-                <div class="col-12">
+                <div class="col-md-6">
                   <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="stock"
+                      name="stock"
+                      placeholder="Stock's Menu"
+                    />
+                    <label for="stock">Stock's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="price"
+                      name="price"
+                      placeholder="Price's Menu"
+                    />
+                    <label for="price">Price's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="category"
+                      name="category"
+                      placeholder="Category's Menu"
+                    />
+                    <label for="category">Category's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="energy"
+                      name="energy"
+                      placeholder="Energy's Menu of State"
+                    />
+                    <label for="energy">Energy's Menu of State</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="toxicity"
+                      name="toxicity"
+                      placeholder="Toxicity's Menu of State"
+                    />
+                    <label for="toxicity">Toxicity's Menu of State</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="radiation"
+                      name="radiation"
+                      placeholder="Radiation's Menu of State"
+                    />
+                    <label for="radiation">Radiation's Menu of State</label>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <!-- <div class="form-floating">
                     <input
                       type="text"
                       class="form-control"
@@ -44,22 +119,17 @@
                       placeholder="Subject"
                     />
                     <label for="subject">Subject</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea
-                      class="form-control"
-                      placeholder="Leave a message here"
-                      id="message"
-                      style="height: 150px"
-                    ></textarea>
-                    <label for="message">Message</label>
-                  </div>
+                  </div> -->
+                  <select class="form-select" multiple aria-label="multiple select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-primary w-100 py-3" type="submit">
-                    Send Message
+                    Add Menu
                   </button>
                 </div>
               </div>
