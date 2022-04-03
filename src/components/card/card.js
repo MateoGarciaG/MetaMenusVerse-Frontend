@@ -1,14 +1,27 @@
-
 import styles from "./card.module.scss";
+import { createButtonCard } from "./scripts/button-card";
 // import "./card.module.scss";
+// import { cardEvents } from "/components/card/scripts/events";
 
+export const Card = ({
+  _id,
+  title,
+  descriptionMenu,
+  stock,
+  price,
+  ingredients,
+  category,
+  state,
+}, ) => {
+  
 
-export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, category, state}) => {
   const cardContainer = document.createDocumentFragment();
   cardContainer.innerHTML = `
   <div class="col-lg-4 col-md-9 my-5 " data-wow-delay="0.1s">
     <div class="${styles["service-item-container"]}">
-      <div class="${styles["service-item"]} d-flex flex-column justify-content-center text-center rounded">
+      <div class="${
+        styles["service-item"]
+      } d-flex flex-column justify-content-center text-center rounded">
         <div class="${styles["service-icon"]} flex-shrink-0">
           <img src="assets/images/card/icon_card.png" alt="icon-card">
         </div>
@@ -29,11 +42,13 @@ export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, ca
         </p>
         <p><span>INGREDIENTS</span>:</p>
         <ul>
-          ${ingredients.map(ingredient => `
+          ${ingredients.map(
+            (ingredient) => `
           <li>
             ${ingredient.name}
           </li>
-          `)}
+          `
+          )}
         </ul>
         <p>
           <span>CATEGORY</span>: ${category.title}
@@ -56,10 +71,12 @@ export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, ca
     "descriptionMenu": ${descriptionMenu},
     "stock": ${stock},
     "price": ${price},
-    "ingredients": [${ingredients.map(ingredient => `
+    "ingredients": [${ingredients.map(
+      (ingredient) => `
             {
               _id: ${ingredient._id}
-            }`)}
+            }`
+    )}
     ],
     "category": {
           _id: ${category._id},
@@ -76,10 +93,12 @@ export const Card = ({_id, title, descriptionMenu, stock, price, ingredients, ca
         </pre>
       </div>
     </div>
+    <div class="${styles["card-buttons"]}">
+    ${createButtonCard("EDITAR").innerHTML}
+    ${createButtonCard("ELIMINAR", "btn btn-outline-danger btn-lg").innerHTML}
+    </div>
   </div>
   `;
-  // cardContainer.innerHTML += jsonCard;
+
   return cardContainer.innerHTML;
-
 };
-

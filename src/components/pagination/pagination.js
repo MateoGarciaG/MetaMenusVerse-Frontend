@@ -33,18 +33,6 @@ export const Pagination = (
 
   render(html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`, cardsContainer);
 
-  // const numberOfPagesHtml =
-  // [...Array(generatePagination.numberOfPages).keys()].map(number => `<li class="page-item">
-  //     <a class="page-link" href="#">${number}</a>
-  //   </li>`);
-
-  // console.log(numberOfPagesHtml);
-
-  // render(
-  //   html`${unsafeHTML(numberOfPagesHtml.join(""))}`,
-  //   numbersContainer
-  // );
-
   const numberOfPagesHtml = [
     ...Array(generatePagination().numberOfPages).keys(),
   ];
