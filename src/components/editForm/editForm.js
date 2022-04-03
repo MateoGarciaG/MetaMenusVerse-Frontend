@@ -1,20 +1,20 @@
-import addFormHtml from "./addForm.html?raw";
-import "./addForm.module.scss";
+import editFormHtml from "./editForm.html?raw";
+import "./editForm.module.scss";
 import { html, render } from "lit-html";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { repeat } from "lit-html/directives/repeat.js";
 import { allIngredients as ingredients } from "/services/gateways/ingredients.service";
 import { allCategories as categories } from "/services/gateways/categories.service";
-import { formAddEvents } from "/components/addForm/scripts/events"
+import { formEditEvents } from "/components/editForm/scripts/events"
 
-export const AddForm = () => {
-  const addForm = document.createDocumentFragment();
-  addForm.innerHTML = addFormHtml;
+export const EditForm = () => {
+  const editForm = document.createDocumentFragment();
+  editForm.innerHTML = editFormHtml;
 
-  const addFormContainer = document.querySelector("#addFormContainer");
-  render(html`${unsafeHTML(addFormHtml)}`, addFormContainer);
+  const editFormContainer = document.querySelector("#editFormContainer");
+  render(html`${unsafeHTML(editFormHtml)}`, editFormContainer);
 
-  const categorySelect = document.querySelector("#category");
+  const categorySelect = document.querySelector("#actualizarCategory");
 
   async function addCategoriesInSelect() {
     const data = await categories();
@@ -36,7 +36,7 @@ export const AddForm = () => {
 
   addCategoriesInSelect();
 
-  const multiSelect = document.querySelector("#ingredients");
+  const multiSelect = document.querySelector("#actualizarIngredients");
 
   async function addMultiselectValues() {
     const data = await ingredients();
@@ -56,7 +56,7 @@ export const AddForm = () => {
 
   addMultiselectValues();
 
-  const formCreation = document.querySelector("#agregarFormulario");
+  const formCreation = document.querySelector("#actualizarForm");
 
-  formAddEvents.onSubmit(formCreation);
+  formEditEvents.onSubmit(formCreation);
 };

@@ -1,6 +1,6 @@
 import { SERVER_URL } from "/utils/constants";
 
-export const allMenus = async () => {
+export const allIngredients = async () => {
   try {
     let headers = new Headers();
 
@@ -10,10 +10,10 @@ export const allMenus = async () => {
       mode: "cors",
       cache: "default",
     };
-    const data = await fetch(`${SERVER_URL}/menus`, initHeaders);
-    const menus = await data.json();
-    console.log("menus DATA", menus);
-    return menus;
+    const data = await fetch(`${SERVER_URL}/ingredients`, initHeaders);
+    const ingredients = await data.json();
+    console.log("INGREDIENTS DATA", ingredients);
+    return ingredients;
   } catch (error) {
     console.log(error);
   }

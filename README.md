@@ -21,3 +21,9 @@ https://www.javascripttutorial.net/javascript-dom/javascript-documentfragment/
 ### Vite HTML Template to be ROUTER
 // https://github.com/IndexXuan/vite-plugin-html-template
 https://github.com/IndexXuan/vite-plugin-mpa
+
+### VITE.js usa HMR para poder importar CSS directamente en el JS
+https://vitejs.dev/guide/features.html#css
+
+### Guide to create validators in JS
+https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
