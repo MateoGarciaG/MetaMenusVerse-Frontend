@@ -96,6 +96,7 @@ export const Card = ({
     <div class="${styles["card-buttons"]}">
     ${createButtonCard("EDITAR").innerHTML}
     ${createButtonCard("ELIMINAR", "btn btn-outline-danger btn-lg").innerHTML}
+    ${createButtonCard("COPY DATA", "btn btn-outline-success btn-lg").innerHTML}
     </div>
   </div>
   `;
