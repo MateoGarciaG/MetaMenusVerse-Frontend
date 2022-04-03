@@ -1,0 +1,168 @@
+<!-- Contact Start -->
+<form id="actualizarForm">
+  <input type="hidden" id="idMenuFormActualizar" />
+  <div class="container-xxl py-5">
+    <div class="container px-lg-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div
+            class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <h2 class="mt-2 text-primary">Editar Menú</h2>
+            <br />
+
+            <h4 id="mostrarIdSeleccionado"></h4>
+
+            <br />
+          </div>
+          <div class="wow fadeInUp" data-wow-delay="0.3s">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      pattern="^[a-zA-Z\s]{6,50}$"
+                      title="Must contain at only letters adn spaces, and at least 6 to 50 characters (special characters not allowed)"
+                      type="text"
+                      class="form-control"
+                      id="actualizarTitle"
+                      name="title"
+                      placeholder="Title's Menu"
+                    />
+                    <label for="actualizarTitle">Title's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      pattern="^[a-zA-Z\s]{20,60}$"
+                      title="Must contain at only letters adn spaces, and at least 20 to 60 characters (special characters not allowed)"
+                      type="text"
+                      class="form-control"
+                      id="actualizarDescriptionMenu"
+                      name="descriptionMenu"
+                      placeholder="Description's Menu"
+                    />
+                    <label for="actualizarDescriptionMenu"
+                      >Description's Menu</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="actualizarStock"
+                      name="stock"
+                      placeholder="Stock's Menu"
+                    />
+                    <label for="actualizarStock">Stock's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="actualizarPrice"
+                      name="price"
+                      step=".01"
+                      pattern="^\d*(\.\d{0,2})?$"
+                      placeholder="Price's Menu"
+                    />
+                    <label for="actualizarPrice">Price's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select
+                      required
+                      class="form-select form-select-lg mb-3"
+                      aria-label=".form-select-lg example"
+                      id="actualizarCategory"
+                      name="category"
+                    >
+                      <option selected disabled value="">
+                        Choose category
+                      </option>
+                    </select>
+                    <label for="actualizarCategory">Category's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="actualizarEnergy"
+                      name="energy"
+                      placeholder="Energy's Menu of State"
+                    />
+                    <label for="actualizarEnergy">Energy's Menu of State</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="actualizarToxicity"
+                      name="toxicity"
+                      placeholder="Toxicity's Menu of State"
+                    />
+                    <label for="actualizarToxicity"
+                      >Toxicity's Menu of State</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="actualizarRadiation"
+                      name="radiation"
+                      placeholder="Radiation's Menu of State"
+                    />
+                    <label for="actualizarRadiation"
+                      >Radiation's Menu of State</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="multi-select">
+                    <label for="actualizarIngredients"
+                      ><h5>Menu's ingredients</h5></label
+                    >
+                    <select
+                      id="actualizarIngredients"
+                      name="ingredients"
+                      multiple
+                      data-multi-select-plugin
+                    ></select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">
+                    Edit Menu
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- Contact End -->
