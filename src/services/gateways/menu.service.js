@@ -19,3 +19,26 @@ export const allMenus = async () => {
   }
 };
 
+export const addMenu = async (bodyMenu) => {
+  try {
+
+    let initHeaders = {
+      method: "POST",
+      body: bodyMenu,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+    },
+      mode: "cors",
+      cache: "default",
+    };
+
+    let response = await fetch(`${SERVER_URL}/menus/save`, initHeaders);
+
+    console.log(response);
+
+    location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+};

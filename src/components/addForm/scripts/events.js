@@ -1,3 +1,5 @@
+import { addMenu } from "/services/gateways/menu.service";
+
 // IIFE using ES6 export form
 export const formAddEvents = (function () {
   const onSubmit = (element) => {
@@ -6,18 +8,33 @@ export const formAddEvents = (function () {
 
       let dataForm = new FormData(element);
 
-      let allIng = "";
-      // Display the key/value pairs
-      for (var pair of dataForm.entries()) {
-        console.log(pair[0] + ", " + pair[1]);
-        if (pair[0] === "ingredients") {
-          allIng += pair[1];
+      let ingredientsList = [];
+
+      for (var [key, value] of dataForm.entries()) {
+        if (key === "ingredients") {
+          ingredientsList.push(value);
         }
       }
 
-      console.log("ENTRIERS", dataForm.entries());
+      dataForm.set("ingredients", ingredientsList);
 
-      console.log("INGREDIENTS", allIng);
+      let bodyMenu = Object.fromEntries(dataForm);
+
+      let formattedBodyMenu = {
+        title: bodyMenu.title,
+        descriptionMenu: bodyMenu.descriptionMenu,
+        stock: parseInt(bodyMenu.stock),
+        price: parseFloat(bodyMenu.price),
+        ingredients: bodyMenu.ingredients.split(","),
+        category: bodyMenu.category,
+        state: {
+          energy: parseInt(bodyMenu.energy),
+          radiation: parseInt(bodyMenu.radiation),
+          toxicity: parseInt(bodyMenu.toxicity),
+        },
+      };
+
+      await addMenu(JSON.stringify(formattedBodyMenu));
     };
   };
 
