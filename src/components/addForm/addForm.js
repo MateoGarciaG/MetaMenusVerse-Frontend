@@ -1,10 +1,11 @@
 import addFormHtml from "./addForm.html?raw";
-import styles from "./addForm.module.scss";
+import "./addForm.module.scss";
 import { html, render } from "lit-html";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { repeat } from "lit-html/directives/repeat.js";
-import { until } from "lit/directives/until.js";
 import { allIngredients as ingredients } from "/services/gateways/ingredients.service";
+import { allCategories as categories } from "/services/gateways/categories.service";
+
 
 export const AddForm = () => {
   const addForm = document.createDocumentFragment();
@@ -13,48 +14,27 @@ export const AddForm = () => {
   const addFormContainer = document.querySelector("#addFormContainer");
   render(html`${unsafeHTML(addFormHtml)}`, addFormContainer);
 
-  const multiselectContainer = document.querySelector(".multi-select");
+  const categorySelect = document.querySelector("#category");
 
-  // render(
-  //   html` <select
-  //     class="multi ${styles["multiselect-custom"]}"
-  //     id="ingredients"
-  //     name="ingredients"
-  //   >
-  //     <option value="" disabled selected>Select your option</option>
-  //     <option value="Bananas">Bananas</option>
-  //     <option value="Apples">Apples</option>
-  //   </select>`,
-  //   multiselectContainer
-  // );
+  async function addCategoriesInSelect() {
+    const data = await categories();
 
-  // ${repeat(
-  //   data.map((i) => i.name),
-  //   (ingredient) => ingredient.id,
-  //   (ingredient) =>
-  //     html`<option value="${ingredient}">${ingredient}</option>`
-  // )}
+    render(
+      html`
+        ${repeat(
+          data.map((c) => c.title),
+          (category) => category.id,
+          (category) =>
+            html`<option value="${category}">${category.replace(/([A-Z])/g, ' $1').trim()}</option>`
+        )}
+      `,
+      categorySelect
+    );
+  }
 
-  // const selectM = html`${until(
-  //   ingredients().then((data) => {
-  //     return data.map((element) => {
-  //       return html`<div class="wrapper">
-  //         <div class="tile">
-  //           <h2>${element.name}</h2>
-  //           <p>${element.name}</p>
-  //         </div>
-  //       </div>`;
-  //     });
-  //   }),
-  //   html` <h4>Waiting to resolve Ingredients data</h4> `
-  // )}`;
+  addCategoriesInSelect();
 
-  // render(selectM, multiselectContainer);
-
-  const multiSelect = document.querySelector("#ingredients2");
-  // var option = document.createElement("option");
-  // option.text = "Kiwi";
-  // sM2.add(option);
+  const multiSelect = document.querySelector("#ingredients");
 
   async function addMultiselectValues() {
     const data = await ingredients();
@@ -74,80 +54,7 @@ export const AddForm = () => {
 
   addMultiselectValues();
 
-  // ingredients().then((data) => {
-  //   let option2 = document.createElement("div");
-  //   option2.innerHTML = `
-  //   <select
-  //       class="multi ${styles["multiselect-custom"]}"
-  //       id="ingredients"
-  //       name="ingredients"
-  //     >
-  //       <option value="" disabled selected>Select your option</option>
-  //       ${data.map(i => i.name).map(i => `<option value="${i}">${i}</option>`)}
-  //   </select>
-  //   `;
 
-  //   console.log("OPTION2", option2)
-
-  //   multiselectContainer.appendChild(option2);
-  // });
-
-  // const selectMultiple = html`${until(
-  //   ingredients().then((data) => {
-  //     return html`
-  //       <select
-  //         class="multi ${styles["multiselect-custom"]}"
-  //         id="ingredients"
-  //         name="ingredients"
-  //       >
-  //         <option value="" disabled selected>Select your option</option>
-  //         ${repeat(
-  //           data.map((i) => i.name),
-  //           (ingredient) => ingredient.id,
-  //           (ingredient) =>
-  //             html`<option value="${ingredient}">${ingredient}</option>`
-  //         )}
-  //       </select>
-  //     `;
-  //   }),
-  //   html`<h4>Waiting to resolve Ingredients data</h4> `
-  // )}`;
-
-  // render(selectMultiple, multiselectContainer);
-
-  // ${repeat(
-  //   data.map((i) => i.name),
-  //   (ingredient) => ingredient.id,
-  //   (ingredient) =>
-  //     html`<option value="${ingredient}">${ingredient}</option>`
-  // )}
-
-  // render(
-  //   html`
-  //     <select
-  //       class="multi ${styles["multiselect-custom"]}"
-  //       id="ingredients"
-  //       name="ingredients"
-  //     >
-  //       <option value="" disabled selected>Select your option</option>
-
-  //     </select>
-  //   `,
-  //   multiselectContainer
-  // );
-
-  window.multiSelect.refresh();
-
-  // document
-  //   .querySelector("#ingredients")
-  //   .addEventListener("mouseout", function (e) {
-  //     e.preventDefault();
-  //     console.log(e.target);
-  //     const vals = document.querySelector("#ingredients").value.split(",");
-  //     console.log(vals); // "Banana,Apples,..."
-  //     // parse as an array
-  //     vals.split(","); // [Bananas, Apples, ...]
-  //   });
 
   const formCreation = document.querySelector("#agregarFormulario");
 
@@ -161,10 +68,7 @@ export const AddForm = () => {
       console.log(value);
     }
 
-    console.log(document.querySelector("#ingredients").value.split(","));
+
   };
 };
 
-const addMenu = () => {
-  document.getElementById("name").value = "Mateo";
-};

@@ -63,13 +63,14 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
+                    <select
+                      class="form-select form-select-lg mb-3"
+                      aria-label=".form-select-lg example"
                       id="category"
                       name="category"
-                      placeholder="Category's Menu"
-                    />
+                    >
+                      <option selected disabled>Choose category</option>
+                    </select>
                     <label for="category">Category's Menu</label>
                   </div>
                 </div>
@@ -111,26 +112,14 @@
                 </div>
 
                 <div class="col-12">
-                  <div class="form-floating multi-select">
-                    <!-- <select
-                      class="multi multiselect-custom"
-                      
-                    >
-                      <option value="" disabled selected>
-                        Select your option
-                      </option>
-                    </select> -->
-
-                    <br>
-
-
-                    <select id="ingredients2"
-                    name="ingredients" multiple data-multi-select-plugin>
-
-                  </select>
-
-
-
+                  <div class="multi-select">
+                    <label for="ingredients"><h5>Menu's ingredients</h5></label>
+                    <select
+                      id="ingredients"
+                      name="ingredients"
+                      multiple
+                      data-multi-select-plugin
+                    ></select>
                   </div>
                 </div>
                 <div class="col-12">
