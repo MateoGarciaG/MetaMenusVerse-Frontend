@@ -1,3 +1,4 @@
+import { createAddaptedMenu } from "/adapters/menu.adapter";
 import { addMenu } from "/services/gateways/menu.service";
 
 // IIFE using ES6 export form
@@ -18,21 +19,7 @@ export const formAddEvents = (function () {
 
       dataForm.set("ingredients", ingredientsList);
 
-      let bodyMenu = Object.fromEntries(dataForm);
-
-      let formattedBodyMenu = {
-        title: bodyMenu.title,
-        descriptionMenu: bodyMenu.descriptionMenu,
-        stock: parseInt(bodyMenu.stock),
-        price: parseFloat(bodyMenu.price),
-        ingredients: bodyMenu.ingredients.split(","),
-        category: bodyMenu.category,
-        state: {
-          energy: parseInt(bodyMenu.energy),
-          radiation: parseInt(bodyMenu.radiation),
-          toxicity: parseInt(bodyMenu.toxicity),
-        },
-      };
+      let formattedBodyMenu = createAddaptedMenu(Object.fromEntries(dataForm));
 
       await addMenu(JSON.stringify(formattedBodyMenu));
     };

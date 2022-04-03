@@ -15,7 +15,6 @@ export const Card = ({
 }) => {
   // Call validator PropTypes Menu
   validateMenuArgs({
-    _id,
     title,
     descriptionMenu,
     stock,

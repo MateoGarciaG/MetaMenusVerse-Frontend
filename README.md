@@ -27,3 +27,6 @@ https://vitejs.dev/guide/features.html#css
 
 ### Guide to create validators in JS
 https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
+
+### PROPTYPES
+https://www.npmjs.com/package/vanilla-prop-types
