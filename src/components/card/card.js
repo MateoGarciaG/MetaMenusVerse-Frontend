@@ -1,7 +1,7 @@
 import styles from "./card.module.scss";
 import { createButtonCard } from "./scripts/button-card";
-// import "./card.module.scss";
-// import { cardEvents } from "/components/card/scripts/events";
+import { validateMenuArgs } from "/models/menu/menu.model";
+import { cardEvents } from "/components/card/scripts/events";
 
 export const Card = ({
   _id,
@@ -12,8 +12,18 @@ export const Card = ({
   ingredients,
   category,
   state,
-}, ) => {
-  
+}) => {
+  // Call validator PropTypes Menu
+  validateMenuArgs({
+    _id,
+    title,
+    descriptionMenu,
+    stock,
+    price,
+    ingredients,
+    category,
+    state,
+  });
 
   const cardContainer = document.createDocumentFragment();
   cardContainer.innerHTML = `
