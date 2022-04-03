@@ -8,6 +8,7 @@ import { Main } from "/components/main/main";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GroupCard } from "/components/groupCard/groupCard";
 
+
 // const container = document.getElementById("app");
 
 Header();
@@ -15,6 +16,7 @@ Main();
 AddForm();
 GroupCard();
 Footer();
+
 // const template = () => html`
 
 //     <h1>Hello Vite!</h1>

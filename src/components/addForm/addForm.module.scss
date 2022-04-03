@@ -1,7 +1,12 @@
 @import "./../../styles/constants.scss";
 
-
-#addform {
-
-  background-color: red;
+.multiselect-custom {
+background-color: red;
+  width: 100%;
+  button {
+    height: 50px;
+    > div {
+      width: unset;
+    }
+  }
 }

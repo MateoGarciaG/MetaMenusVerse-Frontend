@@ -109,23 +109,29 @@
                     <label for="radiation">Radiation's Menu of State</label>
                   </div>
                 </div>
-                
+
                 <div class="col-12">
-                  <!-- <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="subject"
-                      placeholder="Subject"
-                    />
-                    <label for="subject">Subject</label>
-                  </div> -->
-                  <select class="form-select" multiple aria-label="multiple select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <div class="form-floating multi-select">
+                    <!-- <select
+                      class="multi multiselect-custom"
+                      
+                    >
+                      <option value="" disabled selected>
+                        Select your option
+                      </option>
+                    </select> -->
+
+                    <br>
+
+
+                    <select id="ingredients2"
+                    name="ingredients" multiple data-multi-select-plugin>
+
                   </select>
+
+
+
+                  </div>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-primary w-100 py-3" type="submit">
