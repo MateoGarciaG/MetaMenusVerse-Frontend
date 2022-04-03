@@ -21,14 +21,13 @@ export const allMenus = async () => {
 
 export const addMenu = async (bodyMenu) => {
   try {
-
     let initHeaders = {
       method: "POST",
-      body: bodyMenu,
+      body: JSON.stringify(bodyMenu),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-    },
+      },
       mode: "cors",
       cache: "default",
     };
@@ -38,6 +37,32 @@ export const addMenu = async (bodyMenu) => {
     console.log(response);
 
     location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editMenu = async (bodyMenu, idMenu) => {
+  try {
+    let initHeaders = {
+      method: "PUT",
+      body: JSON.stringify(bodyMenu),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      mode: "cors",
+      cache: "default",
+    };
+
+    let response = await fetch(
+      `${SERVER_URL}/menus/update/${idMenu}`,
+      initHeaders
+    );
+
+    console.log(response);
+
+    // location.reload();
   } catch (error) {
     console.log(error);
   }
