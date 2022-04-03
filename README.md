@@ -24,3 +24,6 @@ https://github.com/IndexXuan/vite-plugin-mpa
 
 ### VITE.js usa HMR para poder importar CSS directamente en el JS
 https://vitejs.dev/guide/features.html#css
+
+### Guide to create validators in JS
+https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
