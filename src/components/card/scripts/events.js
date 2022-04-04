@@ -6,8 +6,6 @@ export const cardEvents = (function () {
     e.preventDefault();
 
     if (e.target.classList.contains("editar")) {
-      console.log("CLICK BOTON EDIT", e.target);
-
       let idMenuFormActualizar = document.querySelector(
         "#idMenuFormActualizar"
       );
@@ -16,8 +14,6 @@ export const cardEvents = (function () {
       const menuIdFromButton = e.target.dataset.idMenu;
 
       const cardElementById = document.getElementById(menuIdFromButton);
-
-      console.log(cardElementById);
 
       // Rellenar Form Actualizar/Edit con los valores de la card element
 
@@ -58,11 +54,6 @@ export const cardEvents = (function () {
         .querySelector(".radiation")
         .textContent.trim();
 
-      console.log(
-        "INGREDIENTS CARD EDIT",
-        cardElementById.querySelectorAll(".ingredient")
-      );
-
       // delete old options values
       let oldOptions = document
         .querySelector("#actualizarIngredients")
@@ -74,7 +65,7 @@ export const cardEvents = (function () {
 
       let selectMultiple = document.querySelector("#actualizarIngredients");
 
-      [...selectMultiple.querySelectorAll("option")].forEach(op => {
+      [...selectMultiple.querySelectorAll("option")].forEach((op) => {
         op.removeAttribute("selected");
       });
 
@@ -88,13 +79,21 @@ export const cardEvents = (function () {
 
         option.onclick = removeToken;
 
-        selectMultiple.querySelector(`option[value="${i.textContent.trim()}"]`).setAttribute('selected', "");
+        selectMultiple
+          .querySelector(`option[value="${i.textContent.trim()}"]`)
+          .setAttribute("selected", "");
 
         selectMultiple.parentElement.insertBefore(
           option,
           selectMultiple.nextSibling
         );
       });
+
+      document.body.scrollTop = 1500;
+      document.documentElement.scrollTop = 1500;
+
+
+
     }
   };
 

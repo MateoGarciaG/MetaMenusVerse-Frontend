@@ -3,6 +3,7 @@ import "./pagination.module.scss"; // HMR
 import { html, render } from "lit-html";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { repeat } from "lit-html/directives/repeat.js";
+import { paginationEvents } from "/components/pagination/scripts/events";
 
 export const Pagination = (
   cardsContainer,
@@ -52,15 +53,16 @@ export const Pagination = (
   );
 
   numberOfPagesHtml.forEach((number) => {
-    document
-      .querySelector(`.number-page-${number + 1}`)
-      .addEventListener("click", function () {
+    paginationEvents.onClickNumberPage(
+      document.querySelector(`.number-page-${number + 1}`),
+      function () {
         pageNumber = number + 1;
 
         render(
           html`${generatePagination().paginatedItems.map((card) => card)}`,
           cardsContainer
         );
-      });
+      }
+    );
   });
 };
