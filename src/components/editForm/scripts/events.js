@@ -19,6 +19,7 @@ export const formEditEvents = (function () {
         for (var [key, value] of dataForm.entries()) {
           if (key === "ingredients") {
             ingredientsList.push(value);
+            console.log("INGREDIENT", value);
           }
         }
 
@@ -28,10 +29,11 @@ export const formEditEvents = (function () {
           Object.fromEntries(dataForm)
         );
 
+        console.log(formattedBodyMenu);
+
         await editMenu(formattedBodyMenu, idMenuFormActualizar.value);
 
-        // location.reload();
-        
+        location.reload();
       } else {
         alert("Debes seleccionar un menu");
         location.reload();

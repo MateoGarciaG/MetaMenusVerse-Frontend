@@ -63,6 +63,21 @@ export const cardEvents = (function () {
         cardElementById.querySelectorAll(".ingredient")
       );
 
+      // delete old options values
+      let oldOptions = document
+        .querySelector("#actualizarIngredients")
+        .parentElement.getElementsByClassName("selected-wrapper");
+
+      [...oldOptions].forEach((oldOption) => {
+        oldOption.parentElement.removeChild(oldOption);
+      });
+
+      let selectMultiple = document.querySelector("#actualizarIngredients");
+
+      [...selectMultiple.querySelectorAll("option")].forEach(op => {
+        op.removeAttribute("selected");
+      });
+
       [...cardElementById.querySelectorAll(".ingredient")].forEach((i) => {
         let option = document.createElement("div");
         option.className = "selected-wrapper";
@@ -72,11 +87,15 @@ export const cardEvents = (function () {
           `;
 
         option.onclick = removeToken;
-        console.log("OPTION", option);
-        document.querySelector("#actualizarIngredients").parentElement.appendChild(option);
+
+        selectMultiple.querySelector(`option[value="${i.textContent.trim()}"]`).setAttribute('selected', "");
+
+        selectMultiple.parentElement.insertBefore(
+          option,
+          selectMultiple.nextSibling
+        );
       });
     }
-
   };
 
   // --------------------------------------
