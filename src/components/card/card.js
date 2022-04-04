@@ -26,12 +26,11 @@ export const Card = ({
 
   return html`
     <div class="col-lg-4 col-md-9 my-5 " data-wow-delay="0.1s">
-      <div class="${styles["service-item-container"]}">
+      <div class="${styles["service-item-container"]}" id="${_id}">
         <div
           class="${styles[
             "service-item"
           ]} d-flex flex-column justify-content-center text-center rounded"
-          id="${_id}"
         >
           <div class="${styles["service-icon"]} flex-shrink-0">
             <img src="assets/images/card/icon_card.png" alt="icon-card" />
@@ -83,7 +82,7 @@ export const Card = ({
         </div>
         <div class="${styles["json-card"]}">
           <pre>
-        <span>
+        <span class="code-content">
 <br>
 {
   "_id": ${_id},
@@ -122,16 +121,18 @@ export const Card = ({
           EDITAR
         </button>
         <button
+          @click=${cardEvents.onClickDelete}
           class="btn btn-outline-danger btn-lg eliminar"
           data-id-menu="${_id}"
         >
           ELIMINAR
         </button>
         <button
-          class="btn btn-outline-success btn-lg copy"
+          @click=${cardEvents.onClickCopy}
+          class="btn btn-outline-success btn-lg copiar"
           data-id-menu="${_id}"
         >
-          COPY
+          COPY DATA
         </button>
       </div>
     </div>

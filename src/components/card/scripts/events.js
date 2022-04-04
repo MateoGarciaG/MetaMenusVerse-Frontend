@@ -1,3 +1,4 @@
+import { deleteMenu } from "/services/gateways/menu.service";
 import { removeToken } from "/styled-components/multiselectv2/close-option.min.js";
 
 // IIFE using ES6 export form
@@ -91,9 +92,44 @@ export const cardEvents = (function () {
 
       document.body.scrollTop = 1500;
       document.documentElement.scrollTop = 1500;
+    }
+  };
 
+  const onClickDelete = (e) => {
+    e.preventDefault();
 
+    if (e.target.classList.contains("eliminar")) {
+      const menuIdButton = e.target.dataset.idMenu;
+      const confirmarEliminacion = confirm(
+        "Estás seguro de eliminar este menú?"
+      );
 
+      const executeDelete = async () => {
+        let response = await deleteMenu(menuIdButton);
+        console.log(response);
+        location.reload();
+      };
+
+      if (confirmarEliminacion) {
+        executeDelete();
+      }
+    }
+  };
+
+  const onClickCopy = (e) => {
+    e.preventDefault();
+
+    if (e.target.classList.contains("copiar")) {
+      const menuIdFromButton = e.target.dataset.idMenu;
+
+      const cardElementById = document.getElementById(menuIdFromButton);
+
+      let spanCodeContent =
+        cardElementById.querySelector(".code-content");
+
+      console.log("SPAN CODE COPIED", spanCodeContent.textContent);
+
+      window.navigator.clipboard.writeText(spanCodeContent.textContent);
     }
   };
 
@@ -102,5 +138,7 @@ export const cardEvents = (function () {
   // --------------------------------------
   return {
     onClickEdit,
+    onClickDelete,
+    onClickCopy,
   };
 })();

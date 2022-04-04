@@ -36,7 +36,6 @@ export const addMenu = async (bodyMenu) => {
 
     console.log(response);
 
-    location.reload();
   } catch (error) {
     console.log(error);
   }
@@ -62,7 +61,29 @@ export const editMenu = async (bodyMenu, idMenu) => {
 
     console.log(response);
 
-    // location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteMenu = async (idMenu) => {
+  try {
+    let initHeaders = {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+      },
+      mode: "cors",
+      cache: "default",
+    };
+
+    let response = await fetch(
+      `${SERVER_URL}/menus/delete/id/${idMenu}`,
+      initHeaders
+    );
+
+    console.log(response);
+
   } catch (error) {
     console.log(error);
   }
