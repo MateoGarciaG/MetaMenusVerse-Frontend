@@ -22,6 +22,9 @@ export const formAddEvents = (function () {
       let formattedBodyMenu = createAddaptedMenu(Object.fromEntries(dataForm));
 
       await addMenu(formattedBodyMenu);
+
+      location.reload();
+
     };
   };
 

@@ -30,3 +30,24 @@ https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
 
 ### PROPTYPES
 https://www.npmjs.com/package/vanilla-prop-types
+
+### DATA ATTRIBUTES HTML
+https://plainjs.com/javascript/attributes/setting-getting-and-removing-data-attributes-8/
+
+### insertAdjacentHTML
+https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+https://stackoverflow.com/questions/21422337/append-element-as-sibling-after-element
+
+### Add onClick event to document createElement()
+https://stackoverflow.com/questions/11017509/add-onclick-event-to-document-createelementth
+
+### Difference createElement vs insertAdjacentHTML
+https://www.measurethat.net/Benchmarks/Show/9769/0/createelement-vs-insertadjacenthtml-but-actually-works
+
+
+### LIT HTML documentation
+https://lit.dev/docs/v1/lit-html/writing-templates/
+
+
+### Bubbling Events
+https://typeofnan.dev/how-to-bind-event-listeners-on-dynamically-created-elements-in-javascript/

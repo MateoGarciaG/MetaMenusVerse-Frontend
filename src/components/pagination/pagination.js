@@ -31,7 +31,10 @@ export const Pagination = (
 
   const numbersContainer = document.querySelector(".paginationNumbers");
 
-  render(html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`, cardsContainer);
+  render(
+    html`${generatePagination().paginatedItems.map((card) => card)}`,
+    cardsContainer
+  );
 
   const numberOfPagesHtml = [
     ...Array(generatePagination().numberOfPages).keys(),
@@ -55,7 +58,7 @@ export const Pagination = (
         pageNumber = number + 1;
 
         render(
-          html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`,
+          html`${generatePagination().paginatedItems.map((card) => card)}`,
           cardsContainer
         );
       });

@@ -29,6 +29,9 @@ export const formEditEvents = (function () {
         );
 
         await editMenu(formattedBodyMenu, idMenuFormActualizar.value);
+
+        // location.reload();
+        
       } else {
         alert("Debes seleccionar un menu");
         location.reload();

@@ -76,6 +76,10 @@
   transition: 0.6s ease-in-out !important;
   transform: perspective(500px) rotateY(0deg);
 
+  &__value {
+    color: $white !important;
+  }
+
   p {
     span {
       color: $secondary;
