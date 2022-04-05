@@ -3,6 +3,7 @@ import "./pagination.module.scss"; // HMR
 import { html, render } from "lit-html";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { repeat } from "lit-html/directives/repeat.js";
+import { paginationEvents } from "/components/pagination/scripts/events";
 
 export const Pagination = (
   cardsContainer,
@@ -31,7 +32,10 @@ export const Pagination = (
 
   const numbersContainer = document.querySelector(".paginationNumbers");
 
-  render(html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`, cardsContainer);
+  render(
+    html`${generatePagination().paginatedItems.map((card) => card)}`,
+    cardsContainer
+  );
 
   const numberOfPagesHtml = [
     ...Array(generatePagination().numberOfPages).keys(),
@@ -49,15 +53,16 @@ export const Pagination = (
   );
 
   numberOfPagesHtml.forEach((number) => {
-    document
-      .querySelector(`.number-page-${number + 1}`)
-      .addEventListener("click", function () {
+    paginationEvents.onClickNumberPage(
+      document.querySelector(`.number-page-${number + 1}`),
+      function () {
         pageNumber = number + 1;
 
         render(
-          html`${unsafeHTML(generatePagination().paginatedItems.join(""))}`,
+          html`${generatePagination().paginatedItems.map((card) => card)}`,
           cardsContainer
         );
-      });
+      }
+    );
   });
 };

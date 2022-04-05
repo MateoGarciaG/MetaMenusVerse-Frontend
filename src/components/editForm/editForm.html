@@ -23,8 +23,6 @@
                   <div class="form-floating">
                     <input
                       required
-                      pattern="^[a-zA-Z\s]{6,50}$"
-                      title="Must contain at only letters adn spaces, and at least 6 to 50 characters (special characters not allowed)"
                       type="text"
                       class="form-control"
                       id="actualizarTitle"
@@ -38,8 +36,6 @@
                   <div class="form-floating">
                     <input
                       required
-                      pattern="^[a-zA-Z\s]{20,60}$"
-                      title="Must contain at only letters adn spaces, and at least 20 to 60 characters (special characters not allowed)"
                       type="text"
                       class="form-control"
                       id="actualizarDescriptionMenu"
@@ -166,3 +162,45 @@
   </div>
 </form>
 <!-- Contact End -->
+
+<!-- Requirements to edit menu -->
+<div class="container text-center text-md-left">
+  <div class="row text-center text-md-left">
+    
+    <div class="col-md-10 mx-auto mt-3">
+      <h5 class="text-uppercase mb-4 font-weight-bold">REGLAS A TENER EN CUENTA A LA HORA DE ACTUALIZAR UN MENU</h5>
+      <h6>
+        <a href="https://github.com/MateoGarciaG/MetaMenusVerse-Project">
+          Para más info: https://github.com/MateoGarciaG/MetaMenusVerse-Project
+        </a>
+      </h6>
+      <p>
+        - Todos los menús tienen un nivel de energía caloríca que va variando según el nivel de radiación y toxicidad
+      </p>
+      <p>
+        - La toxicidad aumenta cada día y no puede superar los 30 y no puede ser negativo, si supera los 30 el menú NO ES CONSUMIBLE y el stock se vuelve a 0 debido a que todos los menús de ese tipo ya no serían consumibles
+      </p>
+      <p>
+        - El nivel de energía nunca es superior a 30 y nunca es negativa, si llega a superar las 30 calorías, la energía se convierte en 0, esto quiere decir que el Menú ya no brindaría energía
+      </p>
+      <p>
+        - Si la radiación supera a 100mSv, la toxicidad aumenta 2 veces más rapido, por lo cual el precio disminuye 4$
+      </p>
+      <p>
+        - Si la toxicidad aumenta 2 veces más rapido, la energía disminuye 3 calorías
+      </p>
+      <p>
+        - La "comida chatarra" aumenta 4 calorías en vez de los 2 calorías y si la radiación supera los 100mSv disminuirá en 4 calorías
+      </p>
+      <p>
+        - La "Comida Baby Yoda" aumenta de radiación 10mSv en vez de 5mSv, la toxicidad aumenta 2 veces y el precio aumenta 1.0, si la radiación supera los 100mSv la toxicidad aumentará en 4 y el precio aumenta 3.0
+      </p>
+      <p>
+        - La "Comida Vegana Intergaláctica" cada vez que la radiación aumenta disminuye la toxicidad y el precio solo disminuye 1.0, la toxicidad disminuye 2 veces y no se reduce el precio si la radiación supera los 100mSv
+      </p>
+    </div>
+  </div>
+
+  <hr class="mb-4" />
+
+</div>
