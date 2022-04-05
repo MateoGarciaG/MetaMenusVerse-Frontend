@@ -9,8 +9,5 @@ export const Footer = () => {
   const footer = document.querySelector("footer");
   render(html`${unsafeHTML(footerHtml)}`, footer)
 
-  // return html`
-  // ${unsafeHTML(footerHtml)}
-  // `;
 
 };

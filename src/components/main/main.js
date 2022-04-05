@@ -9,8 +9,5 @@ export const Main = () => {
   const main = document.querySelector("main");
   render(html`${unsafeHTML(mainHtml)}`, main)
 
-  // return html`
-  // ${unsafeHTML(mainHtml)}
-  // `;
 
 };

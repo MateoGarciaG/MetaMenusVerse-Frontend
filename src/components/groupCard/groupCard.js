@@ -14,8 +14,6 @@ export const GroupCard = () => {
 
   const showCardsContainter = document.querySelector(".show-cards");
 
-
-
   const paginationContainer = document.querySelector(".pagination-cards");
 
   async function insertDataPagination() {
