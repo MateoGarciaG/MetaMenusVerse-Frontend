@@ -102,7 +102,7 @@ En mi busqueda por aplicar una arquitectura para frontend de la cual no dependie
 
 Es importante entender que la idea inicial es que la arquitectura de la aplicación me permitiera separar capas de una manera escalable sin que dependa de un framework y que este mismo framework solo sea un complemento más, donde los conceptos principales de Clean Architecture aplicados al frontend serían los siguientes:
 
-<img src="./doc/README/clean_architecture.png" >
+<img src="./doc/README/clean_architecture.PNG" >
 
 ### Models/State
 Será la capa que representará las entidades que usaremos a lo largo de la aplicación en diferentes ciclos de vida o usos. Aplicandolo a este proyecto, basta con tener las entidades/modelos de la aplicación, debido al alcance que tendrá está aplicación, no habrá necesidad de que la aplicación tenga un estado/State, ya que se harán acciones más relacionadas al manejo de la información que proviene de la API REST del MetaMenusVerse más que manipular o usar la reactividad.
@@ -125,7 +125,7 @@ Es aquella capa que almacena toda aquella logica que realiza y opera acciones co
 
 Teniendo en cuenta los conceptos anteriores, donde en el caso de está aplicación quitarámos las capas relacionadas a la reactividad, la estructura sería la siguiente:
 
-<img src="./doc/README/structure.png" >
+<img src="./doc/README/structure.PNG" >
 
 <br>
 
@@ -137,7 +137,7 @@ Donde cada modulo contendría:
 
 3. Components: Donde irán los componentes, es importante mencionar que para aplicar de manera que sea escalable está capa del clean architectura, cada componente podrá tener su correspondiente estructura con los módulos de la lógica que se vaya a usar, con el fin de que esa lógica este encapsulada en ese componente y su alcance y ciclo de vida se mantenga en ese componente:
 
-<img src="./doc/README/structure_components.png" >
+<img src="./doc/README/structure_components.PNG" >
 
 4. Models: Donde irán las entidades que se usarán a lo largo de la aplicación, en mi caso utilizo "vanilla-prop-types" que es una dependencia que me permite construir modelos o prototipos los cuales me permitirán validar si el modelo usado en un componente u otro lugar sea valido.
 
@@ -150,7 +150,7 @@ Donde cada modulo contendría:
 
 Teniendo en cuenta todo esto, si llevamos cada modulo o directorio al modelo de clean architecture, quedaría algo así:
 
-<img src="./doc/README/clean_architecture_structure.png" >
+<img src="./doc/README/clean_architecture_structure.PNG" >
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
