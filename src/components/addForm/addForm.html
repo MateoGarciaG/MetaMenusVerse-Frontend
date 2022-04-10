@@ -1,0 +1,160 @@
+<!-- Contact Start -->
+<form id="agregarFormulario">
+  <div class="container-xxl py-5">
+    <div class="container px-lg-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div
+            class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <h2 class="mt-2 text-primary">Agregar Menú</h2>
+          </div>
+          <div class="wow fadeInUp" data-wow-delay="0.3s">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      pattern="^[a-zA-Z\s]{4,60}$"
+                      title="Must contain at only letters adn spaces, and at least 4 to 60 characters (special characters not allowed)"
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      name="title"
+                      placeholder="Title's Menu"
+                    />
+                    <label for="title">Title's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+
+                      type="text"
+                      class="form-control"
+                      id="descriptionMenu"
+                      name="descriptionMenu"
+                      placeholder="Description's Menu"
+                    />
+                    <label for="descriptionMenu">Description's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="stock"
+                      name="stock"
+                      placeholder="Stock's Menu"
+                    />
+                    <label for="stock">Stock's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="price"
+                      name="price"
+                      step=".01"
+                      pattern="^\d*(\.\d{0,2})?$"
+                      placeholder="Price's Menu"
+                    />
+                    <label for="price">Price's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <select
+                      required
+                      class="form-select form-select-lg mb-3"
+                      aria-label=".form-select-lg example"
+                      id="category"
+                      name="category"
+                    >
+                      <option selected disabled value="">Choose category</option>
+                    </select>
+                    <label for="category">Category's Menu</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="energy"
+                      name="energy"
+                      placeholder="Energy's Menu of State"
+                    />
+                    <label for="energy">Energy's Menu of State</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="toxicity"
+                      name="toxicity"
+                      placeholder="Toxicity's Menu of State"
+                    />
+                    <label for="toxicity">Toxicity's Menu of State</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    
+                    <input
+                      required
+                      type="number"
+                      class="form-control"
+                      id="radiation"
+                      name="radiation"
+                      placeholder="Radiation's Menu of State"
+                    />
+                    <label for="radiation">Radiation's Menu of State</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="multi-select">
+                    <label for="ingredients"><h5>Menu's ingredients</h5></label>
+                    <select
+                      id="ingredients"
+                      name="ingredients"
+                      multiple
+                      data-multi-select-plugin
+                    >
+                  </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">
+                    Add Menu
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- Contact End -->

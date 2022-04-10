@@ -1,0 +1,73 @@
+@import "./../../styles/constants.scss";
+
+footer {
+  background: $tertiary;
+  padding: 2rem 2.5rem;
+  width: 100vw;
+  color: $white;
+
+  h5 {
+    color: $secondary;
+    font-family: $font-family-subtitle;
+  }
+
+  p {
+    padding: 0.7rem 0;
+  }
+
+  a {
+    font-family: $font-family-text;
+    text-decoration: none;
+    position: relative;
+
+    .bi {
+      margin-top: auto;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -0.4rem;
+      left: 0;
+      width: 100%;
+      background-color: $secondary;
+      height: 0.1em;
+      content: "";
+      opacity: 0;
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
+      transform: translate3d(0, 0.2em, 0);
+    }
+  }
+
+  p {
+    font-family: $font-family-text;
+  }
+
+  .bi, i {
+    font-size: 2rem;
+    padding-right: 1rem;
+  }
+
+  strong {
+    color: $secondary;
+    font-family: $font-family-text;
+  }
+
+  .social-media {
+    font-size: 2.2rem;
+    color: $white;
+    border: 2px solid $secondary;
+    padding-right: 0rem;
+    border-radius: 80%;
+    padding: 0.6rem;
+
+    &:hover {
+      transition: 0.5s ease-in-out;
+      background-color: $secondary;
+    }
+  }
+}

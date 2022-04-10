@@ -1,0 +1,18 @@
+// @import "./styles/constants";
+@import "./../styles/constants";
+
+
+#app {
+
+  h1 {
+    color: $secondary;
+    font-family: $font-family-title;
+  }
+
+  .app__box {
+    // background-color: blue;
+    &__container {
+      // background-color: green;
+    }
+  }
+}
