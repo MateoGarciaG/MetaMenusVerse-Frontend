@@ -7,12 +7,11 @@ import mpa from 'vite-plugin-mpa';
 const root = resolve(__dirname, "src");
 const outDir = resolve(__dirname, "dist");
 
-// vite.config.js
+// * vite.config.js
 export default defineConfig({
   plugins: [
     mpa({
-      // scanDir: resolve(root, "pages"),
-      // scanFile: resolve(root, "pages", "main.js"),
+      // * options
     }),
     // ...other plugins
     htmlTemplate({
@@ -25,17 +24,17 @@ export default defineConfig({
           entry: resolve(root, "pages", "main.js"),
         },
       },
-      // expose to template
+      // * expose to template
       data: {
         title: "Homepage",
       },
     }),
   ],
   server: {
-    // Change port
+    // * Change port
     port: 3001,
   },
-  // Preprocessor CSS as SASS
+  // * Preprocessor CSS as SASS
   css: {
     preprocessorOptions: {
       scss: {
@@ -43,7 +42,7 @@ export default defineConfig({
       },
     },
   },
-  // Change default directory path
+  // * Change default directory path
   root,
   resolve: {
     alias: {
@@ -51,17 +50,17 @@ export default defineConfig({
     },
   },
   build: {
-    // Path dist/
+    // * Path dist/
     outDir,
-    // It's okay if it's empty
+    // * It's okay if it's empty
     emptyOutDir: true,
-    // https://www.youtube.com/watch?v=L23bAMdgOZA
+    // * https://www.youtube.com/watch?v=L23bAMdgOZA
     //sourcemap: true,
     // Pages
     // rollupOptions: {
     //   input: {
     //     main: resolve(root, "index.html"),
-    //     // Add others
+    // * Add others
     //   },
     // },
   },

@@ -12,9 +12,7 @@ import { Login } from "/components/login/login";
 
 Header();
 Main();
-
 Login();
-
 AddForm();
 GroupCard();
 EditForm();
