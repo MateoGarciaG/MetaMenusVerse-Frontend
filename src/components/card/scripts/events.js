@@ -7,91 +7,95 @@ export const cardEvents = (function () {
     e.preventDefault();
 
     if (e.target.classList.contains("editar")) {
-      let idMenuFormActualizar = document.querySelector(
-        "#idMenuFormActualizar"
-      );
+      if (localStorage.getItem("token")) {
+        let idMenuFormActualizar = document.querySelector(
+          "#idMenuFormActualizar"
+        );
 
-      // Uso del dataset prop del botón para acceder al id
-      const menuIdFromButton = e.target.dataset.idMenu;
+        // Uso del dataset prop del botón para acceder al id
+        const menuIdFromButton = e.target.dataset.idMenu;
 
-      const cardElementById = document.getElementById(menuIdFromButton);
+        const cardElementById = document.getElementById(menuIdFromButton);
 
-      // Rellenar Form Actualizar/Edit con los valores de la card element
+        // Rellenar Form Actualizar/Edit con los valores de la card element
 
-      idMenuFormActualizar.value = menuIdFromButton;
+        idMenuFormActualizar.value = menuIdFromButton;
 
-      document.getElementById(
-        "mostrarIdSeleccionado"
-      ).innerHTML = `ID: ${menuIdFromButton}`;
+        document.getElementById(
+          "mostrarIdSeleccionado"
+        ).innerHTML = `ID: ${menuIdFromButton}`;
 
-      document.querySelector("#actualizarTitle").value = cardElementById
-        .querySelector(".title")
-        .textContent.trim();
+        document.querySelector("#actualizarTitle").value = cardElementById
+          .querySelector(".title")
+          .textContent.trim();
 
-      document.querySelector("#actualizarDescriptionMenu").value =
-        cardElementById.querySelector(".descriptionMenu").textContent.trim();
+        document.querySelector("#actualizarDescriptionMenu").value =
+          cardElementById.querySelector(".descriptionMenu").textContent.trim();
 
-      document.querySelector("#actualizarStock").value = cardElementById
-        .querySelector(".stock")
-        .textContent.trim();
+        document.querySelector("#actualizarStock").value = cardElementById
+          .querySelector(".stock")
+          .textContent.trim();
 
-      document.querySelector("#actualizarPrice").value = cardElementById
-        .querySelector(".price")
-        .textContent.trim();
+        document.querySelector("#actualizarPrice").value = cardElementById
+          .querySelector(".price")
+          .textContent.trim();
 
-      document.querySelector("#actualizarCategory").value = cardElementById
-        .querySelector(".category")
-        .textContent.trim();
+        document.querySelector("#actualizarCategory").value = cardElementById
+          .querySelector(".category")
+          .textContent.trim();
 
-      document.querySelector("#actualizarEnergy").value = cardElementById
-        .querySelector(".energy")
-        .textContent.trim();
+        document.querySelector("#actualizarEnergy").value = cardElementById
+          .querySelector(".energy")
+          .textContent.trim();
 
-      document.querySelector("#actualizarToxicity").value = cardElementById
-        .querySelector(".toxicity")
-        .textContent.trim();
+        document.querySelector("#actualizarToxicity").value = cardElementById
+          .querySelector(".toxicity")
+          .textContent.trim();
 
-      document.querySelector("#actualizarRadiation").value = cardElementById
-        .querySelector(".radiation")
-        .textContent.trim();
+        document.querySelector("#actualizarRadiation").value = cardElementById
+          .querySelector(".radiation")
+          .textContent.trim();
 
-      // delete old options values
-      let oldOptions = document
-        .querySelector("#actualizarIngredients")
-        .parentElement.getElementsByClassName("selected-wrapper");
+        // delete old options values
+        let oldOptions = document
+          .querySelector("#actualizarIngredients")
+          .parentElement.getElementsByClassName("selected-wrapper");
 
-      [...oldOptions].forEach((oldOption) => {
-        oldOption.parentElement.removeChild(oldOption);
-      });
+        [...oldOptions].forEach((oldOption) => {
+          oldOption.parentElement.removeChild(oldOption);
+        });
 
-      let selectMultiple = document.querySelector("#actualizarIngredients");
+        let selectMultiple = document.querySelector("#actualizarIngredients");
 
-      [...selectMultiple.querySelectorAll("option")].forEach((op) => {
-        op.removeAttribute("selected");
-      });
+        [...selectMultiple.querySelectorAll("option")].forEach((op) => {
+          op.removeAttribute("selected");
+        });
 
-      [...cardElementById.querySelectorAll(".ingredient")].forEach((i) => {
-        let option = document.createElement("div");
-        option.className = "selected-wrapper";
-        option.innerHTML = `
+        [...cardElementById.querySelectorAll(".ingredient")].forEach((i) => {
+          let option = document.createElement("div");
+          option.className = "selected-wrapper";
+          option.innerHTML = `
           <span class="selected-label">${i.textContent.trim()}</span>
           <a class="selected-close" tabindex="-1" data-option="${i.textContent.trim()}" data-hits="0">x</a>
           `;
 
-        option.onclick = removeToken;
+          option.onclick = removeToken;
 
-        selectMultiple
-          .querySelector(`option[value="${i.textContent.trim()}"]`)
-          .setAttribute("selected", "");
+          selectMultiple
+            .querySelector(`option[value="${i.textContent.trim()}"]`)
+            .setAttribute("selected", "");
 
-        selectMultiple.parentElement.insertBefore(
-          option,
-          selectMultiple.nextSibling
-        );
-      });
+          selectMultiple.parentElement.insertBefore(
+            option,
+            selectMultiple.nextSibling
+          );
+        });
 
-      document.body.scrollTop = 1500;
-      document.documentElement.scrollTop = 1500;
+        document.body.scrollTop = 1700;
+        document.documentElement.scrollTop = 1700;
+      } else {
+        alert("Debes loguearte para editar este menú");
+      }
     }
   };
 
@@ -99,19 +103,23 @@ export const cardEvents = (function () {
     e.preventDefault();
 
     if (e.target.classList.contains("eliminar")) {
-      const menuIdButton = e.target.dataset.idMenu;
-      const confirmarEliminacion = confirm(
-        "Estás seguro de eliminar este menú?"
-      );
+      if (localStorage.getItem("token")) {
+        const menuIdButton = e.target.dataset.idMenu;
+        const confirmarEliminacion = confirm(
+          "Estás seguro de eliminar este menú?"
+        );
 
-      const executeDelete = async () => {
-        let response = await deleteMenu(menuIdButton);
-        console.log(response);
-        location.reload();
-      };
+        const executeDelete = async () => {
+          let response = await deleteMenu(menuIdButton);
+          console.log(response);
+          location.reload();
+        };
 
-      if (confirmarEliminacion) {
-        executeDelete();
+        if (confirmarEliminacion) {
+          executeDelete();
+        }
+      } else {
+        alert("Debes loguearte para eliminar este menú");
       }
     }
   };
@@ -124,8 +132,7 @@ export const cardEvents = (function () {
 
       const cardElementById = document.getElementById(menuIdFromButton);
 
-      let spanCodeContent =
-        cardElementById.querySelector(".code-content");
+      let spanCodeContent = cardElementById.querySelector(".code-content");
 
       console.log("SPAN CODE COPIED", spanCodeContent.textContent);
 

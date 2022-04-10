@@ -21,6 +21,8 @@ export const formAddEvents = (function () {
 
       let formattedBodyMenu = createAddaptedMenu(Object.fromEntries(dataForm));
 
+      console.log(formattedBodyMenu);
+
       await addMenu(formattedBodyMenu);
 
       location.reload();

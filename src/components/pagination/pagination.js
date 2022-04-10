@@ -9,7 +9,7 @@ export const Pagination = (
   cardsContainer,
   paginationContainer,
   cards = [],
-  numberPerPage = 6,
+  numberPerPage = 3,
   pageNumber = 1
 ) => {
   const generatePagination = () => {

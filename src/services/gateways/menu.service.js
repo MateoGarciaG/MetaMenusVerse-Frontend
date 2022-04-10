@@ -30,6 +30,7 @@ export const addMenu = async (bodyMenu) => {
       },
       mode: "cors",
       cache: "default",
+      redirect: 'follow'
     };
 
     let response = await fetch(`${SERVER_URL}/menus/save`, initHeaders);
