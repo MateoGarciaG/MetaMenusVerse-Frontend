@@ -269,6 +269,9 @@ export default defineConfig({
 
 ```
 
+### Uso de ESlinter y Prettier
+Decidi usar estas herramientas para facilitar el desarrollo, sobretodo para un entorno VanillaJS, donde ESLinter me permite asegurarme de que el código sea lo más correcto posible al estandár ES6, mientras que Prettier hace el papel de Formateador del código en base a las reglas del ESlinter.
+
 
 **[⬆ back to top](#empaquetador-vitejs)**
 
