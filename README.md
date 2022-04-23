@@ -98,6 +98,9 @@ npm run watch
 ---
 
 ## Arquitectura de la aplicación
+
+`Imagenes pertenecientes al canal de Youtube @GentlemanProgramming`
+
 En mi busqueda por aplicar una arquitectura para frontend de la cual no dependiera de un framework o de la estructura que ya te proponen algunos donde muchas veces es poco escalable debido a la dependencia entre capas y modulos, tuve la duda de como y cuanto es viable sería aplicar los conceptos de clean architecture, ya que sí bien es utilizado en su mayoría para arquitecturas en el lado backend, porque no sería viable aplicarlo en el lado frontend, y precisamente en el curso de React que he estado haciendo se toco está temática (Los recursos del curso de React del cual mencionaré a lo largo de este apartado estarán en la bibliografía). Por lo cual, hay varios puntos a mencionar sobre como abordarlo a un proyecto Backend.
 
 Es importante entender que la idea inicial es que la arquitectura de la aplicación me permitiera separar capas de una manera escalable sin que dependa de un framework y que este mismo framework solo sea un complemento más, donde los conceptos principales de Clean Architecture aplicados al frontend serían los siguientes:
@@ -146,6 +149,8 @@ Donde cada modulo contendría:
 6. Services: Donde irán los servicios externos como los gateways.
 
 7. Utilities/Utils: Donde irán modulos con funciones o lógica que podrá ser reutilizable a lo largo de la aplicación la cual no pertenece a una capa en concreto.
+
+8. styled-components: Donde irán los componentes de terceros.
 
 
 Teniendo en cuenta todo esto, si llevamos cada modulo o directorio al modelo de clean architecture, quedaría algo así:
